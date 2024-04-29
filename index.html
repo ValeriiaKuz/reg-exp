@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css">
+
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>Regular expressions</h1>
+				</section>
+				<section>Regular expressions are patterns used to match character combinations in strings.</section>
+				<section>
+					<span>In JS, regular expressions are objects </span>
+					<h2>RegExp</h2>
+				</section>
+				<section>
+					<section>
+						<h2>How to create?</h2>
+					</section>
+					<section>
+						<h3>/.../  notation</h3>
+						<p>Benefits</p>
+						<ul>
+							<li>Short syntax</li>
+						</ul>
+						<p>Cons</p>
+						<ul>
+							<li>Do not allow any variable insertions</li>
+						</ul>
+					</section>
+					<section>
+						<h3>new RegExp(...) notation</h3>
+						<p>Benefits</p>
+						<ul>
+							<li>Allow variable insertions</li>
+						</ul>
+						<p>Cons</p>
+						<ul>
+							<li>Long syntax</li>
+						</ul>
+					</section>
+
+				</section>
+				<section>
+					<section>How does it look like?</section>
+					<section>/^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i</section>
+				</section>
+				<section>
+					<section>Quantifiers</section>
+					<section>
+						<li>{n}, {m,n}, {m,}
+						</li>
+						<li>x*, x+, x?</li>
+					</section>
+					<section>Character classes</section>
+					<section>
+						<li>.,[]</li>
+						<li>^, $</li>
+						<li>\</li>
+						<li>\d, \D </li>
+						<li>\s, \S</li>
+						<li>\w, \W</li>
+						<li>[^someSymbol]</li>
+					</section>
+					<section>Assertions</section>
+					<section>
+						<li>x(?=y)</li>
+						<li>x(?!y)</li>
+						<li>(?<=y)x</li>
+						<li>(?< !y)x</li>
+					</section>
+				</section>
+				<section>
+					<section>Flags</section>
+					<section>
+						<h3>Syntax</h3>
+						<p>/regular expression/flags</p>
+						<p>new RegExp('pattern', 'flags')</p>
+					</section>
+					<section>
+						<li>i</li>
+						<li>g</li>
+						<li>m</li>
+						<li>s</li>
+						<li>u</li>
+						<li>y</li>
+						<li>d</li>
+					</section>
+				</section>
+				<section><h3>What you can do with regulars in JavaScript: basic functions</h3></section>
+				<section>
+					<section>Strings</section>
+					<section>str.search(/.../) => result:number</section>
+					<section>str.match(/.../) => result:string[]</section>
+					<section>str.replace(/.../,value) => result:string</section>
+					<section>str.split(/.../) => result:string[]</section>
+					<section>Functions of the RegExp object</section>
+					<section>(reg).test(string)=>result:boolean</section>
+					<section>(reg).exec(string)=>result:string</section>
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			Reveal.initialize({
+				hash: true,
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
